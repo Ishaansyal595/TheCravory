@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  /* text */
+  --text-gold: #c9a227;
+  --text-cream: #f8f5ee;
+  --text-dark-green: #1f4d3a;
+  --text-light-green: #5fa86e;
+  --text-red: #d12f1a;
+  --text-light-red: #d88175;
+  --text-cursive: "Great Vibes", cursive;
+
+  /* background */
+  --bg-gold: #c9a227;
+  --bg-cream: #f8f5ee;
+  --bg-dark-green: #1f4d3a;
+  --bg-light-green: #5fa86e;
+  --bg-red: #d12f1a;
+  --bg-light-red: #d88175;
+
+  /* border */
+  --border-gold: #c9a227;
+  --border-cream: #f8f5ee;
+  --border-dark-green: #1f4d3a;
+}
+
+.font-cursive {
+  font-family: var(--text-cursive);
+}

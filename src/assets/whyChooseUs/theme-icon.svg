@@ -1,0 +1,5 @@
+<svg class="theme-icon" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M42 22H39V25H42V22Z" fill="currentColor"></path>
+<path d="M15 28V30.5C15 32.9853 17.0147 35 19.5 35C21.9853 35 24 32.9853 24 30.5V28H21V30.5C21 31.3284 20.3284 32 19.5 32C18.6716 32 18 31.3284 18 30.5V28H15Z" fill="currentColor"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M48 48V0H23V22H9L7.23077 45H0V48H48ZM30 22H26V3H45V45H31.7692L30 22ZM11.7781 25L10.2396 45H28.7604L27.2219 25H11.7781Z" fill="currentColor"></path>
+</svg>

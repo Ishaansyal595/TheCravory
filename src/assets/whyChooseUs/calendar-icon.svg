@@ -1,0 +1,5 @@
+<svg class="theme-icon" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M31 23H17V37H31V23ZM14 20V40H34V20H14Z" fill="currentColor"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11 0H8V3H6C2.68629 3 0 5.68629 0 9V42C0 45.3137 2.68629 48 6 48H42C45.3137 48 48 45.3137 48 42V9C48 5.68629 45.3137 3 42 3H40V0H37V3H11V0ZM37 9V6H11V9H8V6H6C4.34315 6 3 7.34315 3 9V12H45V9C45 7.34315 43.6569 6 42 6H40V9H37ZM45 15V42C45 43.6569 43.6569 45 42 45H6C4.34315 45 3 43.6569 3 42V15H45Z" fill="currentColor"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M18.9375 30.7178L21.0588 28.5965L22.8266 30.3642L27.4228 25.768L29.5441 27.8893L22.8266 34.6069L18.9375 30.7178Z" fill="currentColor"></path>
+</svg>
