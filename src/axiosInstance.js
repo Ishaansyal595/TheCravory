@@ -2,7 +2,7 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 
 export const api = axios.create({
-  baseURL: `http://localhost:5000`,
+  baseURL: `https://thecravorybackend.onrender.com`,
   timeout: 5000,
   withCredentials: true,
 });
@@ -34,7 +34,7 @@ api.interceptors.request.use(
 
       try {
         const reponse = await axios.post(
-          "http://localhost:5000/api/refresh",
+          "https://thecravorybackend.onrender.com/api/refresh",
           {},
           { withCredentials: true },
         );
