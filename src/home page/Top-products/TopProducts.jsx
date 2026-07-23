@@ -13,6 +13,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setAllProducts, setLoading } from "../../store/slice";
 import axios from "axios";
 import { apis } from "../../apis";
+import { api } from "../../axiosInstance";
 
 const TopProducts = () => {
   const products = useSelector((state) => state.allProducts?.data || []);
@@ -21,7 +22,7 @@ const TopProducts = () => {
 
   const getAllProducts = async () => {
     try {
-      const { data } = await axios.get(
+      const { data } = await api.get(
         `${apis.baseProductsUrl}${apis.allProducts}`,
       );
       dispatch(setAllProducts(data.products));

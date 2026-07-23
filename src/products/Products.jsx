@@ -7,6 +7,7 @@ import Heading from "../components/reuseable/Heading";
 import ProductsCard from "../components/reuseable/ProductsCard";
 import { useNavigate } from "react-router-dom";
 import Button from "../components/reuseable/Button";
+import { api } from "../axiosInstance";
 
 const products = () => {
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ const products = () => {
 
   const getAllProducts = async () => {
     try {
-      const { data } = await axios.get(
+      const { data } = await api.get(
         `${apis.baseProductsUrl}${apis.allProducts}`,
       );
       dispatch(setAllProducts(data.products));

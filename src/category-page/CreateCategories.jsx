@@ -8,6 +8,7 @@ import Textarea from "../components/reuseable/Textarea";
 import { useDispatch, useSelector } from "react-redux";
 import { setAllProducts } from "../store/slice";
 import { useNavigate, useParams } from "react-router-dom";
+import { api } from "../axiosInstance";
 
 const initialFormState = {
   name: "",
@@ -68,8 +69,8 @@ const CreateCategories = () => {
         : `${apis.baseCategoriesUrl}${apis.addCategory}`;
 
       const response = isEditMode
-        ? await axios.put(endpoint, data)
-        : await axios.post(endpoint, data);
+        ? await api.put(endpoint, data)
+        : await api.post(endpoint, data);
 
       setMessage({
         type: "success",
@@ -87,7 +88,7 @@ const CreateCategories = () => {
   };
   const fetchCategory = async () => {
     try {
-      const { data } = await axios.get(`${apis.baseCategoriesUrl}${slug}`);
+      const { data } = await api.get(`${apis.baseCategoriesUrl}${slug}`);
       const category = data?.category;
       setFormData({
         name: category.name,

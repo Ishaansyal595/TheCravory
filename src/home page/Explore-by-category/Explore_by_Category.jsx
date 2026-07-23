@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { apis } from "../../apis";
 import { setCategories, setCategoriesLoading } from "../../store/slice";
+import { api } from "../../axiosInstance";
 
 const Explore_by_category = () => {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ const Explore_by_category = () => {
 
   const getAllCategories = async () => {
     try {
-      const { data } = await axios.get(`${apis.baseCategoriesUrl}`);
+      const { data } = await api.get(`${apis.baseCategoriesUrl}`);
       dispatch(setCategories(data.categories));
     } catch (error) {
       console.error("Error fetching categories:", error);

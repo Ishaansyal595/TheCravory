@@ -8,6 +8,7 @@ import Textarea from "../components/reuseable/Textarea";
 import { useDispatch, useSelector } from "react-redux";
 import { setAllProducts } from "../store/slice";
 import { useNavigate, useParams } from "react-router-dom";
+import { api } from "../axiosInstance";
 
 const initialFormState = {
   name: "",
@@ -105,10 +106,10 @@ const CreateProducts = () => {
         : `${apis.baseProductsUrl}${apis.addProduct}`;
 
       const { data } = isEditMode
-        ? await axios.put(endpoint, payload, {
+        ? await api.put(endpoint, payload, {
             headers: { "Content-Type": "multipart/form" },
           })
-        : await axios.post(endpoint, payload, {
+        : await api.post(endpoint, payload, {
             headers: { "Content-Type": "multipart/form" },
           });
 
@@ -152,7 +153,7 @@ const CreateProducts = () => {
     const fetchProduct = async () => {
       try {
         setIsFetching(true);
-        const { data } = await axios.get(`${apis.baseProductsUrl}${id}`);
+        const { data } = await api.get(`${apis.baseProductsUrl}${id}`);
         const product = data?.product;
 
         if (product) {

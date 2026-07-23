@@ -6,6 +6,7 @@ import axios from "axios";
 import { setCategoryProducts } from "../store/slice";
 import ProductsCard from "../components/reuseable/ProductsCard";
 import Button from "../components/reuseable/Button";
+import { api } from "../axiosInstance";
 
 const CategoryProducts = () => {
   const location = useLocation();
@@ -21,7 +22,7 @@ const CategoryProducts = () => {
 
   const getProductsByCategory = async () => {
     try {
-      const { data } = await axios.get(
+      const { data } = await api.get(
         `${apis.baseProductsUrl}${apis.productsByCategory}${slug}`,
       );
       dispatch(setCategoryProducts(data.products));
@@ -38,7 +39,7 @@ const CategoryProducts = () => {
 
   const handleDeleteCategory = async () => {
     console.log("This is the delete category function");
-    await axios.delete(`${apis.baseCategoriesUrl}${slug}`);
+    await api.delete(`${apis.baseCategoriesUrl}${slug}`);
     navigate("/categories");
   };
 

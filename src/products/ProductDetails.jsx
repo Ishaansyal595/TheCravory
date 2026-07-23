@@ -11,6 +11,7 @@ import {
 } from "../store/slice";
 import { FaStar, FaShoppingCart, FaCheck, FaWhatsapp } from "react-icons/fa";
 import Button from "../components/reuseable/Button";
+import { api } from "../axiosInstance";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -29,7 +30,7 @@ const ProductDetails = () => {
   useEffect(() => {
     const getProduct = async () => {
       try {
-        const { data } = await axios.get(`${apis.baseProductsUrl}${id}`);
+        const { data } = await api.get(`${apis.baseProductsUrl}${id}`);
         dispatch(setProductDetail(data.product));
       } catch (err) {
         console.error(err);
@@ -90,7 +91,7 @@ const ProductDetails = () => {
 
   const handleDeleteProduct = async () => {
     console.log("This is the delete product function");
-    await axios.delete(`${apis.baseProductsUrl}${product?._id}`);
+    await api.delete(`${apis.baseProductsUrl}${product?._id}`);
     navigate("/products");
   };
 

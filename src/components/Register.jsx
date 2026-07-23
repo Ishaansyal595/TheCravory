@@ -9,6 +9,7 @@ import axios from "axios";
 import { apis } from "../apis";
 import { useDispatch } from "react-redux";
 import { setAdmin } from "../store/slice";
+import { api } from "../axiosInstance";
 
 const Register = () => {
   const dispatch = useDispatch();
@@ -33,10 +34,7 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      const { data } = await axios.post(
-        `${apis.baseAdminUrl}register`,
-        formData,
-      );
+      const { data } = await api.post(`${apis.baseAdminUrl}register`, formData);
       console.log("This is the admin Data: ", data);
       dispatch(setAdmin(data.newAdmin));
     } catch (error) {
