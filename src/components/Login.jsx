@@ -26,7 +26,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await api.post(`/api/admin/login`, formData);
+      const { data } = await api.post(`/admin/login`, formData);
       dispatch(setAdmin(data));
       navigate("/");
     } catch (error) {
