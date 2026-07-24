@@ -44,6 +44,7 @@ const Explore_by_category = () => {
             <div
               key={item}
               className="relative overflow-hidden rounded-2xl group cursor-pointer"
+              onClick={() => navigate(`/category/${item.slug}`)}
             >
               <img
                 src={item.image}
@@ -52,7 +53,7 @@ const Explore_by_category = () => {
               />
 
               {/* Dark Overlay */}
-              <div className="absolute inset-0 bg-black/35 group-hover:bg-black/50 transition" />
+              <div className="absolute inset-0 bg-black/35 group-hover:bg-black/50 transition pointer-events-none" />
 
               {/* Text */}
               <div className="absolute bottom-6 left-6 text-white">
@@ -61,11 +62,13 @@ const Explore_by_category = () => {
               </div>
 
               {/* Hover Button */}
-              <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition">
-                <button className="bg-white text-black px-4 py-2 rounded-full">
-                  Explore →
-                </button>
-              </div>
+              {/* <Button
+                text={"Explore →"}
+                className={
+                  " top-6 right-6 absolute opacity-0 group-hover:opacity-100 transition-all z-20 cursor-pointer"
+                }
+                onClick={() => navigate(`/category/${item.slug}`)}
+              /> */}
             </div>
           ))}
         </div>

@@ -18,14 +18,6 @@ const Categories = () => {
   const admin = useSelector((state) => state.admin.data);
   const categories = useSelector((state) => state.categories.data);
 
-  const getProductsByCategory = async ({ slug }) => {
-    try {
-      navigate(`/category/${slug}`);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   const handleAddCategoryNavigation = () => {
     navigate("/create-category");
   };
@@ -70,7 +62,7 @@ const Categories = () => {
                 className={
                   "bg-(--bg-cream) top-6 right-6 absolute opacity-0 group-hover:opacity-100 transition-all"
                 }
-                onClick={() => getProductsByCategory({ slug: item.slug })}
+                onClick={() => navigate(`/category/${item.slug}`)}
               />
             </div>
           ))}
